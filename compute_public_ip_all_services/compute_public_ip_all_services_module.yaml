@@ -1,0 +1,8 @@
+resource_selector:
+  resource_types:
+    - compute.googleapis.com/Instance
+predicate:
+  expression: has(resource.networkInterfaces) && has(resource.networkInterfaces[0].accessConfigs)
+description: "An instance that you (or a managed service) has created includes a public IP address."
+recommendation: "Remove the public IP address from the instance you just created."
+severity: CRITICAL
