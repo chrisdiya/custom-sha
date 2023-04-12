@@ -1,0 +1,8 @@
+resource_selector:
+  resource_types:
+    - compute.googleapis.com/Router
+predicate:
+  expression: has(resource.nats) && resource.nats.exists(p, p.name.matches('.'))
+description: "Cloud Router is deployed with a Cloud NAT policy. This configuration allows VMs with private IPs to connect to the internet. This posture may be considered a misconfiguration in environments that expect to be isolated from the public internet."
+recommendation: "Go to https://console.cloud.google.com/net-services/nat, select the NAT gateway you want to remove, click the Delete button."
+severity: CRITICAL
