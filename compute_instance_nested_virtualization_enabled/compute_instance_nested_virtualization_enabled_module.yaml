@@ -1,0 +1,8 @@
+resource_selector:
+  resource_types:
+    - compute.googleapis.com/Instance
+predicate:
+  expression: resource.advancedMachineFeatures.enableNestedVirtualization == true
+description: "Violates the constraints/compute.disableNestedVirtualization Org Policy constraint."
+recommendation: "Reverse the guidance in this doc: https://cloud.google.com/compute/docs/instances/nested-virtualization/enabling#enabling_nested_virtualization_directly_on_an_existing_vm. Or delete the VM!"
+severity: HIGH
