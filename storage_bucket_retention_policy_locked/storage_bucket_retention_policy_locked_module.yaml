@@ -1,0 +1,8 @@
+resource_selector:
+  resource_types:
+    - storage.googleapis.com/Bucket
+predicate:
+  expression: resource.retentionPolicy.isLocked == true
+description: "A GCS Bucket Lock has been applied."
+recommendation: "Remove the project lien and delete the project. Reach out to the bucket owner and inform them of corporate policy."
+severity: CRITICAL
