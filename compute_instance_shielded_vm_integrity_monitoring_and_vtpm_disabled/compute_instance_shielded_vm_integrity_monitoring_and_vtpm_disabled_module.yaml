@@ -1,0 +1,8 @@
+resource_selector:
+  resource_types:
+    - compute.googleapis.com/Instance
+predicate:
+  expression: resource.shieldedInstanceConfig.enableIntegrityMonitoring == false && resource.shieldedInstanceConfig.enableVtpm == false
+description: "Finding when Shielded VM features are not used (Integrity Monitoring and vTPM only). This excludes findings when SecureBoot is disabled."
+recommendation: "Follow this doc: https://cloud.google.com/compute/shielded-vm/docs/modifying-shielded-vm"
+severity: HIGH
